@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 60% 3%;
+    --foreground: 0 0% 100%;
+    --card: 230 55% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 230 55% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 270 100% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 50% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 230 40% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100% / 0.06;
+    --input: 0 0% 100% / 0.06;
+    --ring: 195 100% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 230 50% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 270 100% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100% / 0.06;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .glass-card {
+    background: rgba(13, 18, 51, 0.72);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+  }
+
+  .neon-glow-purple {
+    box-shadow: 
+      0 0 5px rgba(139, 47, 255, 0.4),
+      0 0 20px rgba(139, 47, 255, 0.3),
+      0 0 40px rgba(139, 47, 255, 0.1);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 
+      0 0 5px rgba(0, 212, 255, 0.4),
+      0 0 20px rgba(0, 212, 255, 0.3),
+      0 0 40px rgba(0, 212, 255, 0.1);
+  }
+
+  .gradient-purple {
+    background: linear-gradient(135deg, #8B2FFF, #E040FB);
+  }
+
+  .gradient-cyan-purple {
+    background: linear-gradient(135deg, #00D4FF, #8B2FFF);
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #8B2FFF, #E040FB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #00D4FF, #8B2FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #8B2FFF;
+    border-radius: 4px;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); 
+    }
+    50% { 
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.6); 
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+/* HX GlassIcon float keyframe */
+@keyframes hx-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(0.5deg); }
+  66%       { transform: translateY(-4px) rotate(-0.5deg); }
+}
