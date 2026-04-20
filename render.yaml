@@ -10,21 +10,13 @@ services:
           name: helixonix-db
           property: connectionString
       - key: REDIS_URL
-        fromService:
-          type: keyvalue
-          name: helixonix-redis
-          property: connectionString
+        sync: false
       - key: NODE_ENV
         value: production
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_REFRESH_SECRET
         generateValue: true
-
-  - type: keyvalue
-    name: helixonix-redis
-    plan: free
-    ipAllowList: []
 
 databases:
   - name: helixonix-db
