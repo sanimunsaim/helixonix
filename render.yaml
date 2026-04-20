@@ -24,9 +24,9 @@ services:
   - type: keyvalue
     name: helixonix-redis
     plan: free
+    ipAllowList: []
 
 databases:
   - name: helixonix-db
     databaseName: helixonix
-    user: postgres
     plan: free
