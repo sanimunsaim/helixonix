@@ -11,7 +11,7 @@ services:
           property: connectionString
       - key: REDIS_URL
         fromService:
-          type: redis
+          type: keyvalue
           name: helixonix-redis
           property: connectionString
       - key: NODE_ENV
@@ -21,12 +21,12 @@ services:
       - key: JWT_REFRESH_SECRET
         generateValue: true
 
+  - type: keyvalue
+    name: helixonix-redis
+    plan: free
+
 databases:
   - name: helixonix-db
     databaseName: helixonix
     user: postgres
-    plan: free
-
-  - type: redis
-    name: helixonix-redis
     plan: free
